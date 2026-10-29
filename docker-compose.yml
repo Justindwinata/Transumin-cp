@@ -1,0 +1,27 @@
+name: transum-in-nexus
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: infra/docker/postgis/Dockerfile
+    image: transum-in-nexus/postgis:17.11-3.6
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-transum_in_nexus}
+      POSTGRES_USER: ${POSTGRES_USER:-transum_in}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in an ignored .env file}
+    ports:
+      - '127.0.0.1:${POSTGRES_PORT:-5433}:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        ['CMD-SHELL', 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+
+volumes:
+  postgres_data:
+    name: ${POSTGRES_VOLUME_NAME:-transum-in-nexus-product-postgres-data}

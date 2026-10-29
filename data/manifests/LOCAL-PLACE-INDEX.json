@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "source_manifest": "data/manifests/PHASE-2A-SPATIAL-SNAPSHOT.json",
+  "source_opl_sha256": "946ec648b035a4681dfa4aa185976fe7aee8c07de936baed5ee68624e9bfc481",
+  "dataset_version_id": "e6aa5be0-0cf4-5e33-8581-696af9a2045f",
+  "source": {
+    "provider": "Geofabrik GmbH / OpenStreetMap contributors",
+    "url": "https://download.geofabrik.de/asia/indonesia/java-260929.osm.pbf",
+    "publication_page": "https://download.geofabrik.de/asia/indonesia.html",
+    "license": "Open Data Commons Open Database License (ODbL) 1.0",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "attribution": "© OpenStreetMap contributors",
+    "source_replication_timestamp": "2026-09-29T20:22:51Z"
+  },
+  "envelope": {
+    "west": 106.205898,
+    "south": -6.649546,
+    "east": 107.217352,
+    "north": -5.994144,
+    "rationale": "Union of the Phase-1 TransJakarta shape extent and verified target-rail terminal coordinates, expanded by a 5 km geodesic engineering buffer."
+  },
+  "index_path": ".local/geocoder/local-places.json",
+  "index_sha256": "2c2c5ad5bb82473224e0c8a4312a797d4a7268d1c44c94103e8da61f81daa865",
+  "counts": {
+    "ADDRESS": 19,
+    "POI": 32
+  },
+  "coverage": "Incidental non-transit OSM nodes in existing filtered spatial extract only; no comprehensive residential, business or street coverage; coordinates not independently verified. Private/no-access and transit objects excluded. Nodes only; no polygon/relation centroids."
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "snapshot_id",
+    "network_snapshot_id",
+    "created_at",
+    "state_cutoff_at",
+    "processing_version",
+    "content_hash",
+    "transit_snapshot",
+    "spatial_snapshot",
+    "configuration",
+    "manifest_ref",
+    "materialized_state_count",
+    "evidence_note",
+    "status"
+  ],
+  "properties": {
+    "snapshot_id": { "type": "string", "minLength": 1 },
+    "network_snapshot_id": { "type": ["string", "null"], "format": "uuid" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "state_cutoff_at": { "type": "string", "format": "date-time" },
+    "processing_version": { "type": "string", "const": "PHASE_2B_V1" },
+    "content_hash": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "transit_snapshot": { "$ref": "#/$defs/dependency" },
+    "spatial_snapshot": { "$ref": "#/$defs/dependency" },
+    "configuration": { "type": "object" },
+    "manifest_ref": { "type": "string", "minLength": 1 },
+    "materialized_state_count": { "type": "integer", "minimum": 0 },
+    "evidence_note": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["PENDING_DATABASE_VERIFICATION", "FINALIZED"]
+    }
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["snapshot_id", "dataset_version_id", "manifest"],
+      "properties": {
+        "snapshot_id": { "type": "string", "minLength": 1 },
+        "dataset_version_id": { "type": "string", "format": "uuid" },
+        "manifest": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

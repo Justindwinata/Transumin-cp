@@ -1,0 +1,12 @@
+.agents/
+.next/
+coverage/
+dist/
+node_modules/
+pnpm-lock.yaml
+skills-lock.json
+docs/api/openapi-v1.yaml
+docs/specifications/context/00-09/
+docs/specifications/baseline/10-19/
+packages/shared-types/src/generated/
+apps/web/next-env.d.ts

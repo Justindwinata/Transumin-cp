@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://transum-in.local/schemas/phase1-operator-coverage.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["as_of", "operators"],
+  "properties": {
+    "as_of": { "type": "string", "format": "date-time" },
+    "operators": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "operator",
+          "source_verified",
+          "source_class",
+          "topology",
+          "schedule",
+          "geometry",
+          "service_calendar",
+          "license_status",
+          "redistribution_status",
+          "canonical_ingestion",
+          "quality_status",
+          "limitation"
+        ],
+        "properties": {
+          "operator": { "type": "string", "minLength": 1 },
+          "source_verified": { "type": "boolean" },
+          "source_class": { "type": "string", "pattern": "^[A-D]_" },
+          "topology": { "type": "string", "minLength": 1 },
+          "schedule": { "type": "string", "minLength": 1 },
+          "geometry": { "type": "string", "minLength": 1 },
+          "service_calendar": { "type": "string", "minLength": 1 },
+          "license_status": { "type": "string", "minLength": 1 },
+          "redistribution_status": { "type": "string", "minLength": 1 },
+          "canonical_ingestion": { "type": "string", "minLength": 1 },
+          "quality_status": { "type": "string", "minLength": 1 },
+          "limitation": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

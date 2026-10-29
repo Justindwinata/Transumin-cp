@@ -1,0 +1,28 @@
+{
+  "snapshot_id": "phase2-base-network-20260930-v1",
+  "network_snapshot_id": "43fb9a29-0c89-5c72-8826-e3dc2adcfb1f",
+  "created_at": "2026-09-30T21:19:37.125+07:00",
+  "state_cutoff_at": "2026-09-30T21:18:00+07:00",
+  "processing_version": "PHASE_2B_V1",
+  "content_hash": "b9b44f9d04d236d86bec0ad1b97447e35c53b64a0bfdfeb379881279056ac6f7",
+  "transit_snapshot": {
+    "snapshot_id": "phase1-transit-20260929-63b4fb14d9af-v2",
+    "dataset_version_id": "bf7e3650-6af7-5bee-b25a-26f763f7fe4c",
+    "manifest": "data/manifests/PHASE-1-CANONICAL-TRANSIT-SNAPSHOT.json"
+  },
+  "spatial_snapshot": {
+    "snapshot_id": "phase2a-spatial-20260929-ffb2269b1b9c-v1",
+    "dataset_version_id": "e6aa5be0-0cf4-5e33-8581-696af9a2045f",
+    "manifest": "data/manifests/PHASE-2A-SPATIAL-SNAPSHOT.json"
+  },
+  "configuration": {
+    "base_state_only": true,
+    "missing_evidence_state": "UNKNOWN",
+    "projection_version": "PHASE_2B_V1",
+    "scenario_overrides_included": false
+  },
+  "manifest_ref": "data/manifests/PHASE-2-BASE-NETWORK-SNAPSHOT.json",
+  "materialized_state_count": 0,
+  "evidence_note": "No verified operator observation was available at the cutoff. Missing snapshot rows deterministically mean UNKNOWN; no AVAILABLE or LIVE state is fabricated.",
+  "status": "FINALIZED"
+}

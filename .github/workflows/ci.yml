@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run source quality gate (private data artifacts excluded)
+        run: pnpm check:source
+
+      - name: Audit production dependencies
+        run: pnpm audit --prod --audit-level high
+
+      - name: Run client-bundle secret category scan
+        run: pnpm security:scan --category-only
+
+  integration:
+    runs-on: ubuntu-latest
+    needs: quality
+    timeout-minutes: 15
+    env:
+      POSTGRES_DB: transum_in_nexus_product
+      POSTGRES_HOST: 127.0.0.1
+      POSTGRES_PORT: 5435
+      POSTGRES_VOLUME_NAME: transum-in-nexus-product-postgres-data
+      POSTGRES_USER: transum_in
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure disposable database credential
+        run: echo "POSTGRES_PASSWORD=$(openssl rand -hex 24)" >> "$GITHUB_ENV"
+
+      - name: Start PostgreSQL and PostGIS
+        run: docker compose up -d --build --wait postgres
+
+      - name: Apply and inspect migrations
+        run: pnpm db:migrate && pnpm db:status
+
+      - name: Run database integration gate
+        run: pnpm check:integration
+
+      - name: Stop database infrastructure
+        if: always()
+        run: docker compose down --volumes --remove-orphans

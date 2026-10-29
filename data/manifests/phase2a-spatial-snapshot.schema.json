@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "snapshot_id",
+    "source_id",
+    "dataset_version_id",
+    "version_label",
+    "retrieved_at",
+    "source",
+    "source_archive",
+    "raw",
+    "study_envelope",
+    "processing",
+    "transit_snapshot_dependency",
+    "configuration",
+    "network_quality",
+    "rail_topology",
+    "official_corroboration",
+    "derived_quality",
+    "quality_status",
+    "raw_storage_policy"
+  ],
+  "properties": {
+    "snapshot_id": { "type": "string", "minLength": 1 },
+    "source_id": { "type": "string", "format": "uuid" },
+    "dataset_version_id": { "type": "string", "format": "uuid" },
+    "version_label": { "type": "string", "minLength": 1 },
+    "retrieved_at": { "type": "string", "format": "date-time" },
+    "source": { "type": "object" },
+    "source_archive": { "$ref": "#/$defs/artifact" },
+    "raw": { "$ref": "#/$defs/artifact" },
+    "study_envelope": {
+      "type": "object",
+      "required": ["west", "south", "east", "north", "rationale"],
+      "properties": {
+        "west": { "type": "number" },
+        "south": { "type": "number" },
+        "east": { "type": "number" },
+        "north": { "type": "number" },
+        "rationale": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "processing": {
+      "type": "object",
+      "required": [
+        "pipeline_version",
+        "tool",
+        "method",
+        "opl_path",
+        "opl_bytes",
+        "opl_sha256"
+      ],
+      "properties": {
+        "pipeline_version": { "type": "string" },
+        "tool": { "type": "string" },
+        "method": { "type": "string" },
+        "opl_path": { "type": "string" },
+        "opl_bytes": { "type": "integer" },
+        "opl_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "transit_snapshot_dependency": { "type": "object" },
+    "configuration": { "type": "object" },
+    "network_quality": { "type": "object" },
+    "rail_topology": { "type": "object" },
+    "official_corroboration": { "type": "object" },
+    "derived_quality": { "type": "object" },
+    "quality_status": { "type": "string" },
+    "raw_storage_policy": { "type": "string" }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "required": ["path", "bytes", "sha256"],
+      "properties": {
+        "path": { "type": "string" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

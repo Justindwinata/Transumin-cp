@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "phase4b-a-router-input-20261002-v2",
+  "generatedAt": "2026-10-02T22:56:56+07:00",
+  "timezone": "Asia/Jakarta",
+  "namespaceStrategy": "tnx:<feed-key>:<entity-type>:<percent-encoded-original-id>",
+  "originalIdRecovery": "decode the suffix after the first three colon-delimited components",
+  "modeMapping": {
+    "tj": "TRANSJAKARTA",
+    "mikro": "MIKROTRANS",
+    "krl": "KRL",
+    "mrt": "MRT_JAKARTA",
+    "lrtj": "LRT_JAKARTA",
+    "lrtjb": "LRT_JABODEBEK"
+  },
+  "serviceDates": [
+    {
+      "feedKey": "tj",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Official GTFS calendar SH is active on this Friday and ends 2027-12-31."
+    },
+    {
+      "feedKey": "mikro",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Mikrotrans routes are selected from the same official TransJakarta GTFS and calendar."
+    },
+    {
+      "feedKey": "krl",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Friday after the latest official KAI Commuter Jabodetabek timetable available to the project became effective on 2025-12-13; the official schedule page exposed no later full Jabodetabek timetable at retrieval."
+    },
+    {
+      "feedKey": "mrt",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Friday within the retrieved official 2026 normal operating pattern."
+    },
+    {
+      "feedKey": "lrtj",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "After 2026-09-16 extension opening and within the official limited-operation facts published 2026-09-25."
+    },
+    {
+      "feedKey": "lrtjb",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Friday matching the controlled official timetable retrieved 2026-10-01."
+    }
+  ],
+  "osm": {
+    "file": "phase2a-spatial.osm.pbf",
+    "sha256": "ffb2269b1b9ceb14ad61cb033e44ad9a0ac798390ee3c8b64d0b615811e6f14f",
+    "bytes": 45656523,
+    "sourceSnapshotId": "phase2a-spatial-20260929-ffb2269b1b9c-v1",
+    "license": "ODbL-1.0"
+  },
+  "feeds": [
+    {
+      "feedKey": "krl",
+      "productMode": "KRL",
+      "file": "krl.gtfs.zip",
+      "sha256": "cdefb74ba1323d65a3691ae33111706969db83267966c6c46451471251b144be",
+      "bytes": 127681,
+      "counts": {
+        "routes": 62,
+        "trips": 1065,
+        "stopTimes": 17481,
+        "stops": 83,
+        "frequencies": 0,
+        "serviceDates": 2
+      },
+      "timingPrecision": "EXACT_SCHEDULE",
+      "representativeDate": "2026-10-02"
+    },
+    {
+      "feedKey": "lrtj",
+      "productMode": "LRT_JAKARTA",
+      "file": "lrtj.gtfs.zip",
+      "sha256": "ee06a3802f3c736a4285af2a72e4e03312c1cf88d2e19ccc1623448394499dca",
+      "bytes": 2831,
+      "counts": {
+        "routes": 1,
+        "trips": 4,
+        "stopTimes": 34,
+        "stops": 11,
+        "frequencies": 4,
+        "serviceDates": 1
+      },
+      "timingPrecision": "FREQUENCY_DERIVED",
+      "representativeDate": "2026-10-02"
+    },
+    {
+      "feedKey": "lrtjb",
+      "productMode": "LRT_JABODEBEK",
+      "file": "lrtjb.gtfs.zip",
+      "sha256": "13cb641bb23b774ed3017b59ecc0597430843feb1aad28e47bdfe720cba1964f",
+      "bytes": 3326,
+      "counts": {
+        "routes": 1,
+        "trips": 4,
+        "stopTimes": 52,
+        "stops": 18,
+        "frequencies": 4,
+        "serviceDates": 1
+      },
+      "timingPrecision": "FREQUENCY_DERIVED",
+      "representativeDate": "2026-10-02"
+    },
+    {
+      "feedKey": "mikro",
+      "productMode": "MIKROTRANS",
+      "file": "mikro.gtfs.zip",
+      "sha256": "5e9881718fbfae21d1fa359c1c4e63e25c45c85869807b8933ce34320b915773",
+      "bytes": 1070381,
+      "counts": {
+        "agencies": 1,
+        "routes": 98,
+        "trips": 247,
+        "stopTimes": 14090,
+        "stops": 5827,
+        "shapes": 247,
+        "frequencies": 247
+      },
+      "timingPrecision": "SOURCE_GTFS_WITH_FREQUENCIES",
+      "representativeDate": "2026-10-02"
+    },
+    {
+      "feedKey": "mrt",
+      "productMode": "MRT_JAKARTA",
+      "file": "mrt.gtfs.zip",
+      "sha256": "bc7913a91391824a371db90a582b0ac3426d93d58e695cb24da9cb65f466f7d6",
+      "bytes": 2837,
+      "counts": {
+        "routes": 1,
+        "trips": 2,
+        "stopTimes": 26,
+        "stops": 13,
+        "frequencies": 10,
+        "serviceDates": 1
+      },
+      "timingPrecision": "FREQUENCY_DERIVED",
+      "representativeDate": "2026-10-02"
+    },
+    {
+      "feedKey": "tj",
+      "productMode": "TRANSJAKARTA",
+      "file": "tj.gtfs.zip",
+      "sha256": "02be2cba48412752dc792b286e43326b73816b24e76d6e86de9fa0cceb26d8ca",
+      "bytes": 1497312,
+      "counts": {
+        "agencies": 1,
+        "routes": 142,
+        "trips": 453,
+        "stopTimes": 12337,
+        "stops": 3407,
+        "shapes": 453,
+        "frequencies": 506
+      },
+      "timingPrecision": "SOURCE_GTFS_WITH_FREQUENCIES",
+      "representativeDate": "2026-10-02"
+    }
+  ],
+  "validation": {
+    "gtfs": [
+      {
+        "feedKey": "krl",
+        "status": "VALID",
+        "errors": 0,
+        "warnings": 0,
+        "orphanRecords": 0,
+        "duplicateIds": 0,
+        "definitionsChecked": 1213
+      },
+      {
+        "feedKey": "lrtj",
+        "status": "VALID",
+        "errors": 0,
+        "warnings": 0,
+        "orphanRecords": 0,
+        "duplicateIds": 0,
+        "definitionsChecked": 18
+      },
+      {
+        "feedKey": "lrtjb",
+        "status": "VALID",
+        "errors": 0,
+        "warnings": 0,
+        "orphanRecords": 0,
+        "duplicateIds": 0,
+        "definitionsChecked": 25
+      },
+      {
+        "feedKey": "mikro",
+        "status": "WARNING",
+        "errors": 0,
+        "warnings": 4,
+        "orphanRecords": 0,
+        "duplicateIds": 0,
+        "definitionsChecked": 6176
+      },
+      {
+        "feedKey": "mrt",
+        "status": "VALID",
+        "errors": 0,
+        "warnings": 0,
+        "orphanRecords": 0,
+        "duplicateIds": 0,
+        "definitionsChecked": 18
+      },
+      {
+        "feedKey": "tj",
+        "status": "WARNING",
+        "errors": 0,
+        "warnings": 49,
+        "orphanRecords": 0,
+        "duplicateIds": 0,
+        "definitionsChecked": 4007
+      }
+    ],
+    "definitionsTotal": 11457,
+    "uniqueNamespacedIds": 11457,
+    "collisions": 0,
+    "orphanReferences": 0,
+    "duplicateOrConflictingSourceIds": 0,
+    "globalDefinitionsChecked": 11457,
+    "timezone": "Asia/Jakarta",
+    "referentialErrors": 0
+  },
+  "rights": {
+    "tj": "CC-BY-4.0_SOURCE_DERIVATIVE",
+    "mikro": "CC-BY-4.0_SOURCE_DERIVATIVE",
+    "krl": "LOCAL_NONCOMMERCIAL_RESEARCH_ONLY_NO_REDISTRIBUTION",
+    "mrt": "LOCAL_NONCOMMERCIAL_RESEARCH_ONLY_NO_REDISTRIBUTION",
+    "lrtj": "LOCAL_NONCOMMERCIAL_RESEARCH_ONLY_NO_REDISTRIBUTION",
+    "lrtjb": "LOCAL_NONCOMMERCIAL_RESEARCH_ONLY_NO_REDISTRIBUTION"
+  },
+  "fare": "UNKNOWN"
+}

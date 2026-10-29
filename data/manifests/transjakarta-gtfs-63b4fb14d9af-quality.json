@@ -1,0 +1,189 @@
+{
+  "validator": "TRANSUM_IN_GTFS_VALIDATOR_V1",
+  "status": "WARNING",
+  "archiveBytes": 2497332,
+  "filesPresent": [
+    "agency.txt",
+    "calendar.txt",
+    "fare_attributes.txt",
+    "fare_rules.txt",
+    "frequencies.txt",
+    "routes.txt",
+    "shapes.txt",
+    "stop_times.txt",
+    "stops.txt",
+    "ticketing_deep_links.txt",
+    "ticketing_identifiers.txt",
+    "transfers.txt",
+    "trips.txt"
+  ],
+  "inventory": [
+    {
+      "file": "agency.txt",
+      "classification": "USED",
+      "rows": 1,
+      "reason": "Validated and mapped into the canonical transit model."
+    },
+    {
+      "file": "stops.txt",
+      "classification": "USED",
+      "rows": 8091,
+      "reason": "Validated and mapped into the canonical transit model."
+    },
+    {
+      "file": "routes.txt",
+      "classification": "USED",
+      "rows": 240,
+      "reason": "Validated and mapped into the canonical transit model."
+    },
+    {
+      "file": "trips.txt",
+      "classification": "USED",
+      "rows": 700,
+      "reason": "Validated and mapped into the canonical transit model."
+    },
+    {
+      "file": "stop_times.txt",
+      "classification": "USED",
+      "rows": 26427,
+      "reason": "Validated and mapped into the canonical transit model."
+    },
+    {
+      "file": "calendar.txt",
+      "classification": "USED",
+      "rows": 7,
+      "reason": "Validated and mapped into the canonical transit model."
+    },
+    {
+      "file": "calendar_dates.txt",
+      "classification": "NOT_PRESENT_OR_NOT_APPLICABLE",
+      "rows": null,
+      "reason": "Optional GTFS file is not present."
+    },
+    {
+      "file": "shapes.txt",
+      "classification": "USED",
+      "rows": 242485,
+      "reason": "Validated and mapped into the canonical transit model."
+    },
+    {
+      "file": "transfers.txt",
+      "classification": "USED",
+      "rows": 14,
+      "reason": "Validated and mapped into the canonical transit model."
+    },
+    {
+      "file": "feed_info.txt",
+      "classification": "NOT_PRESENT_OR_NOT_APPLICABLE",
+      "rows": null,
+      "reason": "Optional GTFS file is not present."
+    },
+    {
+      "file": "frequencies.txt",
+      "classification": "USED",
+      "rows": 753,
+      "reason": "Validated and mapped into the canonical transit model."
+    },
+    {
+      "file": "fare_attributes.txt",
+      "classification": "UNSUPPORTED_OPTIONAL",
+      "rows": 6,
+      "reason": "Optional extension retained in the immutable archive but outside the canonical scope."
+    },
+    {
+      "file": "fare_rules.txt",
+      "classification": "UNSUPPORTED_OPTIONAL",
+      "rows": 240,
+      "reason": "Optional extension retained in the immutable archive but outside the canonical scope."
+    },
+    {
+      "file": "ticketing_deep_links.txt",
+      "classification": "UNSUPPORTED_OPTIONAL",
+      "rows": 1,
+      "reason": "Optional extension retained in the immutable archive but outside the canonical scope."
+    },
+    {
+      "file": "ticketing_identifiers.txt",
+      "classification": "UNSUPPORTED_OPTIONAL",
+      "rows": 5059,
+      "reason": "Optional extension retained in the immutable archive but outside the canonical scope."
+    }
+  ],
+  "metrics": {
+    "agencies": 1,
+    "routes": 240,
+    "stations": 272,
+    "stops": 7819,
+    "trips": 700,
+    "stopTimes": 26427,
+    "shapePoints": 242485,
+    "shapes": 700,
+    "transfers": 14,
+    "serviceCalendars": 7,
+    "serviceExceptions": 0,
+    "frequencies": 753,
+    "logicalTransitSegments": 17727,
+    "tripSegmentTraversals": 25727,
+    "mobilityEntities": 26072,
+    "recordsRead": 278718,
+    "rowsRejected": 0,
+    "gtfsTimesOver24Hours": 0,
+    "nullOrInvalidGeometries": 0,
+    "orphanRecords": 0,
+    "duplicateIds": 0,
+    "suspiciousDuplicateEntities": 50,
+    "unusedStops": 0,
+    "unusedServiceCalendars": 3,
+    "minServiceDate": "2004-01-15",
+    "maxServiceDate": "2027-12-31"
+  },
+  "coverage": {
+    "classificationBasis": "GTFS_ROUTE_DESC",
+    "routeDescriptionCounts": {
+      "Angkutan Umum Integrasi": 63,
+      "BRT": 31,
+      "Bus Wisata": 3,
+      "Mikrotrans": 98,
+      "Royaltrans": 10,
+      "Rusun": 17,
+      "Transjabodetabek": 18
+    },
+    "brt": {
+      "status": "EVIDENCED",
+      "routes": 31
+    },
+    "nonBrtOrFeeder": {
+      "status": "EVIDENCED",
+      "routes": 63,
+      "evidenceValues": ["Angkutan Umum Integrasi"]
+    },
+    "mikrotrans": {
+      "status": "EVIDENCED",
+      "routes": 98
+    },
+    "otherCategories": {
+      "Bus Wisata": 3,
+      "Royaltrans": 10,
+      "Rusun": 17,
+      "Transjabodetabek": 18
+    }
+  },
+  "issues": [
+    {
+      "severity": "WARNING",
+      "category": "QUALITY",
+      "code": "SUSPICIOUS_DUPLICATE_STOP_SIGNATURES",
+      "count": 50,
+      "message": "Distinct stop IDs share the same name and coordinates; source IDs are preserved.",
+      "file": "stops.txt"
+    },
+    {
+      "severity": "WARNING",
+      "category": "QUALITY",
+      "code": "UNUSED_SERVICE_CALENDARS",
+      "count": 3,
+      "message": "Service calendars are not referenced by trips.",
+      "file": "calendar.txt"
+    }
+  ]
+}

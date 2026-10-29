@@ -1,0 +1,10 @@
+FROM postgres:17.11-bookworm@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652
+
+LABEL org.opencontainers.image.title="TRANSUM-IN NEXUS PostgreSQL/PostGIS development image" \
+      org.opencontainers.image.description="Apple Silicon and x86-64 compatible PostgreSQL 17.11 with PostGIS 3.6"
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        postgresql-17-postgis-3=3.6.4+dfsg-2.pgdg12+1 \
+        postgresql-17-postgis-3-scripts=3.6.4+dfsg-2.pgdg12+1 \
+    && rm -rf /var/lib/apt/lists/*

@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "snapshotCreatedAt": "2026-10-02T00:00:00+07:00",
+  "krl": {
+    "sourceId": "krl-jabodetabek-timetable-effective-2025-12-13",
+    "sourceUrl": "https://www.commuterline.id/files/download/documents/Jadwal%20Commuter%20Line%20Jabodetabek%20-%20Mulai%2013%20Desember%202025.pdf",
+    "sourceRetrievedAt": "2026-10-02T15:56:56Z",
+    "sourceEffectiveFrom": "2025-12-13",
+    "sourceArtifact": {
+      "path": "data/raw/routing/2026-10-02/krl-jabodetabek-mulai-2025-12-13.pdf",
+      "sha256": "1c4bebc007cc7803b3665e645c8064769e4289a9dfdae98cc7fc60e84a57944b",
+      "bytes": 559035
+    },
+    "stationNames": {
+      "AC": "Ancol",
+      "AK": "Angke",
+      "BJD": "Bojong Gede",
+      "BKS": "Bekasi",
+      "BKST": "Bekasi Timur",
+      "BOI": "Bojong Indah",
+      "BOO": "Bogor",
+      "BPR": "Batu Ceper",
+      "BUA": "Buaran",
+      "CBN": "Cibinong",
+      "CC": "Cicayur",
+      "CIT": "Cibitung",
+      "CJT": "Cilejit",
+      "CKI": "Cikini",
+      "CKR": "Cikarang",
+      "CKY": "Cikoya",
+      "CLT": "Cilebut",
+      "CSK": "Cisauk",
+      "CTA": "Citayam",
+      "CTR": "Citeras",
+      "CUK": "Cakung",
+      "CW": "Cawang",
+      "DAR": "Daru",
+      "DP": "Depok",
+      "DPB": "Depok Baru",
+      "DRN": "Duren Kalibata",
+      "DU": "Duri",
+      "GDD": "Gondangdia",
+      "GMR": "Gambir",
+      "GRG": "Grogol",
+      "GST": "Gang Sentiong",
+      "JAKK": "Jakarta Kota",
+      "JAY": "Jayakarta",
+      "JMU": "Jurang Mangu",
+      "JNG": "Jatinegara",
+      "JUA": "Juanda",
+      "KAT": "Karet",
+      "KBY": "Kebayoran",
+      "KDS": "Kalideres",
+      "KLDB": "Klender Baru",
+      "KLD": "Klender",
+      "KMO": "Kemayoran",
+      "KMT": "Kramat",
+      "KPB": "Kampung Bandan",
+      "KRI": "Kranji",
+      "LNA": "Lenteng Agung",
+      "MGB": "Mangga Besar",
+      "MJ": "Maja",
+      "MRI": "Manggarai",
+      "MTR": "Matraman",
+      "NMO": "Nambo",
+      "PDJ": "Pondok Ranji",
+      "PDRG": "Pondok Rajeg",
+      "PI": "Poris",
+      "PLM": "Palmerah",
+      "POC": "Pondok Cina",
+      "POK": "Pondok Jati",
+      "PRP": "Parung Panjang",
+      "PSE": "Pasar Senen",
+      "PSG": "Pesing",
+      "PSM": "Pasar Minggu",
+      "PSMB": "Pasar Minggu Baru",
+      "RJW": "Rajawali",
+      "RK": "Rangkasbitung",
+      "RU": "Rawa Buntu",
+      "RW": "Rawa Buaya",
+      "SDM": "Sudimara",
+      "SRP": "Serpong",
+      "SUDB": "BNI City",
+      "SUD": "Sudirman",
+      "SW": "Sawah Besar",
+      "TB": "Tambun",
+      "TEB": "Tebet",
+      "TEJ": "Tenjo",
+      "TGS": "Tigaraksa",
+      "THB": "Tanah Abang",
+      "THI": "Tanah Tinggi",
+      "TKO": "Taman Kota",
+      "TLM": "Telagamurni",
+      "TNG": "Tangerang",
+      "TNT": "Tanjung Barat",
+      "TPK": "Tanjung Priok",
+      "UI": "Universitas Indonesia",
+      "UP": "Universitas Pancasila"
+    }
+  },
+  "lrtJabodebekTimetable": {
+    "path": "data/raw/routing/2026-10-01/lrt-jabodebek-jadwal.html",
+    "sha256": "00eda06d17ebd397acf404c90b89a3f282c4c4b62999ff6dc374607ba8c90b3c",
+    "bytes": 3821883
+  },
+  "frequencyModes": [
+    {
+      "mode": "MRT_JAKARTA",
+      "sourceId": "mrt-jakarta-official-operating-pattern-2026",
+      "sourceRetrievedAt": "2026-10-01T11:41:35Z",
+      "sourceFactChecksum": "007a7bd366afc79e509b3d53fe33a7c9e5787455ea2357b6d9850a2d25bbd6a5",
+      "patterns": [
+        {
+          "id": "mrt-northbound",
+          "direction": "Lebak Bulus Grab-Bundaran HI Bank Jakarta",
+          "endToEndMinutes": 30,
+          "stops": [
+            { "id": "mrt-lebak-bulus", "name": "Lebak Bulus Grab" },
+            { "id": "mrt-fatmawati", "name": "Fatmawati Indomaret" },
+            { "id": "mrt-cipete-raya", "name": "Cipete Raya TUKU" },
+            { "id": "mrt-haji-nawi", "name": "Haji Nawi" },
+            { "id": "mrt-blok-a", "name": "Blok A" },
+            { "id": "mrt-blok-m", "name": "Blok M BCA" },
+            { "id": "mrt-asean", "name": "ASEAN" },
+            { "id": "mrt-senayan", "name": "Senayan Mastercard" },
+            { "id": "mrt-istora", "name": "Istora Mandiri" },
+            { "id": "mrt-bendungan-hilir", "name": "Bendungan Hilir" },
+            { "id": "mrt-setiabudi", "name": "Setiabudi Astra" },
+            { "id": "mrt-dukuh-atas", "name": "Dukuh Atas BNI" },
+            { "id": "mrt-bundaran-hi", "name": "Bundaran HI Bank Jakarta" }
+          ],
+          "windows": [
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "05:00",
+              "end": "07:00",
+              "headwayMinutes": 10
+            },
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "07:00",
+              "end": "09:00",
+              "headwayMinutes": 5
+            },
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "09:00",
+              "end": "17:00",
+              "headwayMinutes": 10
+            },
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "17:00",
+              "end": "19:00",
+              "headwayMinutes": 5
+            },
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "19:00",
+              "end": "24:00",
+              "headwayMinutes": 10
+            },
+            {
+              "serviceCalendar": "WEEKEND",
+              "start": "05:00",
+              "end": "24:00",
+              "headwayMinutes": 10
+            }
+          ]
+        },
+        {
+          "id": "mrt-southbound",
+          "direction": "Bundaran HI Bank Jakarta-Lebak Bulus Grab",
+          "endToEndMinutes": 30,
+          "stops": [
+            { "id": "mrt-bundaran-hi", "name": "Bundaran HI Bank Jakarta" },
+            { "id": "mrt-dukuh-atas", "name": "Dukuh Atas BNI" },
+            { "id": "mrt-setiabudi", "name": "Setiabudi Astra" },
+            { "id": "mrt-bendungan-hilir", "name": "Bendungan Hilir" },
+            { "id": "mrt-istora", "name": "Istora Mandiri" },
+            { "id": "mrt-senayan", "name": "Senayan Mastercard" },
+            { "id": "mrt-asean", "name": "ASEAN" },
+            { "id": "mrt-blok-m", "name": "Blok M BCA" },
+            { "id": "mrt-blok-a", "name": "Blok A" },
+            { "id": "mrt-haji-nawi", "name": "Haji Nawi" },
+            { "id": "mrt-cipete-raya", "name": "Cipete Raya TUKU" },
+            { "id": "mrt-fatmawati", "name": "Fatmawati Indomaret" },
+            { "id": "mrt-lebak-bulus", "name": "Lebak Bulus Grab" }
+          ],
+          "windows": [
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "05:00",
+              "end": "07:00",
+              "headwayMinutes": 10
+            },
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "07:00",
+              "end": "09:00",
+              "headwayMinutes": 5
+            },
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "09:00",
+              "end": "17:00",
+              "headwayMinutes": 10
+            },
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "17:00",
+              "end": "19:00",
+              "headwayMinutes": 5
+            },
+            {
+              "serviceCalendar": "WEEKDAY",
+              "start": "19:00",
+              "end": "24:00",
+              "headwayMinutes": 10
+            },
+            {
+              "serviceCalendar": "WEEKEND",
+              "start": "05:00",
+              "end": "24:00",
+              "headwayMinutes": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "LRT_JAKARTA",
+      "sourceId": "lrt-jakarta-limited-operation-2026-09-25",
+      "sourceRetrievedAt": "2026-10-01T11:41:35Z",
+      "sourceFactChecksum": "74e5b3c897198f747663e189e47e7346a0b87c75a34ae9389c9f8cec3fbfdb6c",
+      "patterns": [
+        {
+          "id": "lrt-jakarta-full-eastbound",
+          "direction": "Kelapa Gading-Manggarai",
+          "endToEndMinutes": 28,
+          "stops": [
+            { "id": "lrtj-kelapa-gading", "name": "Kelapa Gading" },
+            { "id": "lrtj-boulevard-utara", "name": "Boulevard Utara" },
+            { "id": "lrtj-boulevard-selatan", "name": "Boulevard Selatan" },
+            { "id": "lrtj-pulomas", "name": "Pulomas" },
+            { "id": "lrtj-equestrian", "name": "Equestrian" },
+            { "id": "lrtj-velodrome", "name": "Velodrome" },
+            { "id": "lrtj-rawamangun", "name": "Rawamangun" },
+            { "id": "lrtj-pramuka", "name": "Pramuka" },
+            {
+              "id": "lrtj-matraman",
+              "name": "Matraman",
+              "boardingAllowed": false
+            },
+            {
+              "id": "lrtj-proklamasi",
+              "name": "Proklamasi",
+              "boardingAllowed": false
+            },
+            { "id": "lrtj-manggarai", "name": "Manggarai" }
+          ],
+          "windows": [
+            {
+              "serviceCalendar": "DAILY",
+              "start": "05:30",
+              "end": "20:00",
+              "headwayMinutes": 15
+            }
+          ]
+        },
+        {
+          "id": "lrt-jakarta-full-westbound",
+          "direction": "Manggarai-Kelapa Gading",
+          "endToEndMinutes": 28,
+          "stops": [
+            { "id": "lrtj-manggarai", "name": "Manggarai" },
+            {
+              "id": "lrtj-proklamasi",
+              "name": "Proklamasi",
+              "boardingAllowed": false
+            },
+            {
+              "id": "lrtj-matraman",
+              "name": "Matraman",
+              "boardingAllowed": false
+            },
+            { "id": "lrtj-pramuka", "name": "Pramuka" },
+            { "id": "lrtj-rawamangun", "name": "Rawamangun" },
+            { "id": "lrtj-velodrome", "name": "Velodrome" },
+            { "id": "lrtj-equestrian", "name": "Equestrian" },
+            { "id": "lrtj-pulomas", "name": "Pulomas" },
+            { "id": "lrtj-boulevard-selatan", "name": "Boulevard Selatan" },
+            { "id": "lrtj-boulevard-utara", "name": "Boulevard Utara" },
+            { "id": "lrtj-kelapa-gading", "name": "Kelapa Gading" }
+          ],
+          "windows": [
+            {
+              "serviceCalendar": "DAILY",
+              "start": "05:30",
+              "end": "20:00",
+              "headwayMinutes": 15
+            }
+          ]
+        },
+        {
+          "id": "lrt-jakarta-legacy-eastbound",
+          "direction": "Kelapa Gading-Velodrome",
+          "endToEndMinutes": 15,
+          "stops": [
+            { "id": "lrtj-kelapa-gading", "name": "Kelapa Gading" },
+            { "id": "lrtj-boulevard-utara", "name": "Boulevard Utara" },
+            { "id": "lrtj-boulevard-selatan", "name": "Boulevard Selatan" },
+            { "id": "lrtj-pulomas", "name": "Pulomas" },
+            { "id": "lrtj-equestrian", "name": "Equestrian" },
+            { "id": "lrtj-velodrome", "name": "Velodrome" }
+          ],
+          "windows": [
+            {
+              "serviceCalendar": "DAILY",
+              "start": "20:01",
+              "end": "23:00",
+              "headwayMinutes": 10
+            }
+          ]
+        },
+        {
+          "id": "lrt-jakarta-legacy-westbound",
+          "direction": "Velodrome-Kelapa Gading",
+          "endToEndMinutes": 15,
+          "stops": [
+            { "id": "lrtj-velodrome", "name": "Velodrome" },
+            { "id": "lrtj-equestrian", "name": "Equestrian" },
+            { "id": "lrtj-pulomas", "name": "Pulomas" },
+            { "id": "lrtj-boulevard-selatan", "name": "Boulevard Selatan" },
+            { "id": "lrtj-boulevard-utara", "name": "Boulevard Utara" },
+            { "id": "lrtj-kelapa-gading", "name": "Kelapa Gading" }
+          ],
+          "windows": [
+            {
+              "serviceCalendar": "DAILY",
+              "start": "20:01",
+              "end": "23:00",
+              "headwayMinutes": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "LRT_JABODEBEK",
+      "sourceId": "lrt-jabodebek-official-displayed-timetable-2026-10-01",
+      "sourceRetrievedAt": "2026-10-01T11:41:35Z",
+      "sourceArtifact": {
+        "path": "data/raw/routing/2026-10-01/lrt-jabodebek-rute.html",
+        "sha256": "4db35062708466d246be849695e0da6a0b498729819698857b8c256309c13e18",
+        "bytes": 129790
+      },
+      "sourceFactChecksum": "4db35062708466d246be849695e0da6a0b498729819698857b8c256309c13e18",
+      "patterns": [
+        {
+          "id": "lrt-jabodebek-cibubur-inbound",
+          "direction": "Harjamukti-Dukuh Atas BNI",
+          "endToEndMinutes": 37,
+          "departureSourceStation": "Harjamukti",
+          "stops": [
+            { "id": "lrtjb-harjamukti", "name": "Harjamukti" },
+            { "id": "lrtjb-ciracas", "name": "Ciracas" },
+            { "id": "lrtjb-kampung-rambutan", "name": "Kampung Rambutan" },
+            { "id": "lrtjb-taman-mini", "name": "Taman Mini" },
+            { "id": "lrtjb-cawang", "name": "Cawang" },
+            { "id": "lrtjb-ciliwung", "name": "Ciliwung" },
+            { "id": "lrtjb-cikoko", "name": "Cikoko" },
+            { "id": "lrtjb-pancoran", "name": "Pancoran bank bjb" },
+            { "id": "lrtjb-kuningan", "name": "Kuningan" },
+            { "id": "lrtjb-rasuna-said", "name": "Rasuna Said" },
+            { "id": "lrtjb-setiabudi", "name": "Setiabudi" },
+            { "id": "lrtjb-dukuh-atas", "name": "Dukuh Atas BNI" }
+          ]
+        },
+        {
+          "id": "lrt-jabodebek-cibubur-outbound",
+          "direction": "Dukuh Atas BNI-Harjamukti",
+          "endToEndMinutes": 37,
+          "departureSourceStation": "Harjamukti",
+          "stops": [
+            { "id": "lrtjb-dukuh-atas", "name": "Dukuh Atas BNI" },
+            { "id": "lrtjb-setiabudi", "name": "Setiabudi" },
+            { "id": "lrtjb-rasuna-said", "name": "Rasuna Said" },
+            { "id": "lrtjb-kuningan", "name": "Kuningan" },
+            { "id": "lrtjb-pancoran", "name": "Pancoran bank bjb" },
+            { "id": "lrtjb-cikoko", "name": "Cikoko" },
+            { "id": "lrtjb-ciliwung", "name": "Ciliwung" },
+            { "id": "lrtjb-cawang", "name": "Cawang" },
+            { "id": "lrtjb-taman-mini", "name": "Taman Mini" },
+            { "id": "lrtjb-kampung-rambutan", "name": "Kampung Rambutan" },
+            { "id": "lrtjb-ciracas", "name": "Ciracas" },
+            { "id": "lrtjb-harjamukti", "name": "Harjamukti" }
+          ]
+        },
+        {
+          "id": "lrt-jabodebek-bekasi-inbound",
+          "direction": "Jati Mulya-Dukuh Atas BNI",
+          "endToEndMinutes": 40,
+          "departureSourceStation": "Jati Mulya",
+          "stops": [
+            { "id": "lrtjb-jati-mulya", "name": "Jati Mulya" },
+            { "id": "lrtjb-bekasi-barat", "name": "Bekasi Barat" },
+            { "id": "lrtjb-cikunir-2", "name": "Cikunir 2" },
+            { "id": "lrtjb-cikunir-1", "name": "Cikunir 1" },
+            { "id": "lrtjb-jati-bening-baru", "name": "Jati Bening Baru" },
+            { "id": "lrtjb-halim", "name": "Halim" },
+            { "id": "lrtjb-cawang", "name": "Cawang" },
+            { "id": "lrtjb-ciliwung", "name": "Ciliwung" },
+            { "id": "lrtjb-cikoko", "name": "Cikoko" },
+            { "id": "lrtjb-pancoran", "name": "Pancoran bank bjb" },
+            { "id": "lrtjb-kuningan", "name": "Kuningan" },
+            { "id": "lrtjb-rasuna-said", "name": "Rasuna Said" },
+            { "id": "lrtjb-setiabudi", "name": "Setiabudi" },
+            { "id": "lrtjb-dukuh-atas", "name": "Dukuh Atas BNI" }
+          ]
+        },
+        {
+          "id": "lrt-jabodebek-bekasi-outbound",
+          "direction": "Dukuh Atas BNI-Jati Mulya",
+          "endToEndMinutes": 40,
+          "departureSourceStation": "Jati Mulya",
+          "stops": [
+            { "id": "lrtjb-dukuh-atas", "name": "Dukuh Atas BNI" },
+            { "id": "lrtjb-setiabudi", "name": "Setiabudi" },
+            { "id": "lrtjb-rasuna-said", "name": "Rasuna Said" },
+            { "id": "lrtjb-kuningan", "name": "Kuningan" },
+            { "id": "lrtjb-pancoran", "name": "Pancoran bank bjb" },
+            { "id": "lrtjb-cikoko", "name": "Cikoko" },
+            { "id": "lrtjb-ciliwung", "name": "Ciliwung" },
+            { "id": "lrtjb-cawang", "name": "Cawang" },
+            { "id": "lrtjb-halim", "name": "Halim" },
+            { "id": "lrtjb-jati-bening-baru", "name": "Jati Bening Baru" },
+            { "id": "lrtjb-cikunir-1", "name": "Cikunir 1" },
+            { "id": "lrtjb-cikunir-2", "name": "Cikunir 2" },
+            { "id": "lrtjb-bekasi-barat", "name": "Bekasi Barat" },
+            { "id": "lrtjb-jati-mulya", "name": "Jati Mulya" }
+          ]
+        }
+      ]
+    }
+  ]
+}

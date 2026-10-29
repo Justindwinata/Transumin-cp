@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://transum-in.local/schemas/source-record.schema.json",
+  "title": "TRANSUM-IN NEXUS source registry record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_key",
+    "name",
+    "provider",
+    "source_type",
+    "canonical_url",
+    "license_record",
+    "access_method",
+    "coverage_notes",
+    "verification_status",
+    "source_class",
+    "license_status",
+    "redistribution_status",
+    "automation_status",
+    "canonical_ingestion_status"
+  ],
+  "properties": {
+    "source_id": { "type": "string", "format": "uuid" },
+    "source_key": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "provider": { "type": "string", "minLength": 1 },
+    "source_type": { "type": "string", "minLength": 1 },
+    "canonical_url": { "type": ["string", "null"], "format": "uri" },
+    "license_record": { "type": "string", "minLength": 1 },
+    "access_method": { "type": "string", "minLength": 1 },
+    "access_notes": { "type": ["string", "null"] },
+    "coverage_notes": { "type": "string", "minLength": 1 },
+    "redistribution_rule": { "type": ["string", "null"] },
+    "verification_status": {
+      "type": "string",
+      "enum": ["NOT_VERIFIED", "VERIFIED", "REJECTED"]
+    },
+    "source_class": {
+      "type": "string",
+      "enum": [
+        "A_VERIFIED_OPEN_MACHINE_DATA",
+        "B_VERIFIED_OFFICIAL_STRUCTURED_DATA",
+        "C_OFFICIAL_REUSE_OR_AUTOMATION_UNCLEAR",
+        "D_UNSUITABLE_OR_UNVERIFIED"
+      ]
+    },
+    "license_status": { "$ref": "#/$defs/evidenceStatus" },
+    "redistribution_status": { "$ref": "#/$defs/evidenceStatus" },
+    "automation_status": { "$ref": "#/$defs/evidenceStatus" },
+    "data_format": { "type": "string", "minLength": 1 },
+    "machine_readability": { "type": "string", "minLength": 1 },
+    "schedule_status": { "type": "string", "minLength": 1 },
+    "topology_status": { "type": "string", "minLength": 1 },
+    "geometry_status": { "type": "string", "minLength": 1 },
+    "service_calendar_status": { "type": "string", "minLength": 1 },
+    "freshness": { "type": "string", "minLength": 1 },
+    "effective_date": { "type": ["string", "null"], "format": "date" },
+    "canonical_ingestion_status": {
+      "type": "string",
+      "enum": ["COMPLETED", "COVERED_BY_PARENT_SOURCE", "NOT_INGESTED"]
+    },
+    "quality_status": { "type": "string", "minLength": 1 },
+    "active": { "type": "boolean", "default": true },
+    "official_download_url": { "type": "string", "format": "uri" },
+    "license_name": { "type": "string", "minLength": 1 },
+    "license_url": { "type": "string", "format": "uri" },
+    "license_evidence_url": { "type": "string", "format": "uri" },
+    "attribution_requirement": { "type": "string", "minLength": 1 },
+    "verified_at": { "type": "string", "format": "date-time" },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "corroboration": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    },
+    "current_manifest": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "evidenceStatus": {
+      "type": "string",
+      "enum": ["VERIFIED", "PERMITTED", "PROHIBITED", "UNKNOWN"]
+    }
+  }
+}

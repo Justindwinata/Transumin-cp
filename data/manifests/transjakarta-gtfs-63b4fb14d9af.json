@@ -1,0 +1,32 @@
+{
+  "dataset_source_id": "e0e9bda7-4649-48c6-a64a-ebf421f48e61",
+  "dataset_version_id": "bf7e3650-6af7-5bee-b25a-26f763f7fe4c",
+  "source_key": "transjakarta-official-gtfs-static",
+  "version_label": "retrieved-2026-09-29T030831Z-63b4fb14d9af",
+  "retrieved_at": "2026-09-29T03:08:31Z",
+  "effective_from": "2004-01-15T00:00:00Z",
+  "effective_to": "2027-12-31T23:59:59Z",
+  "checksum_sha256": "63b4fb14d9afa7fd21737fee57991366b3f61746af12479725cc17d0cf64fb22",
+  "raw_path_ref": "data/raw/transjakarta/2026-09-29/63b4fb14d9afa7fd21737fee57991366b3f61746af12479725cc17d0cf64fb22/transjakarta-gtfs.zip",
+  "license_record": "data/licenses/transjakarta-gtfs-cc-by-4.0.md",
+  "validation_status": "WARNING",
+  "validation_report_ref": "data/manifests/transjakarta-gtfs-63b4fb14d9af-quality.json",
+  "publication_page": "https://ppid.transjakarta.co.id/informasi/berkala",
+  "requested_download_url": "https://gtfs.transjakarta.co.id/files/file_gtfs.zip",
+  "resolved_download_url": "https://gtfs.transjakarta.co.id/files/file_gtfs.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "archive_filename": "transjakarta-gtfs.zip",
+  "archive_bytes": 2497332,
+  "validator": "TRANSUM_IN_GTFS_VALIDATOR_V1",
+  "external_validator_status": "PASS",
+  "external_validator_note": "MobilityData GTFS Validator 8.0.1 completed with zero ERROR notices; internal deterministic validation and database constraints remain authoritative.",
+  "external_validation_summary_ref": "data/manifests/transjakarta-gtfs-63b4fb14d9af-mobilitydata-validator-summary.json",
+  "transformations": [
+    {
+      "name": "GTFS parse, validate, normalize, and canonical ingest",
+      "version": "TRANSUM_IN_GTFS_VALIDATOR_V1",
+      "configuration_ref": "data/registry/transjakarta-gtfs.json"
+    }
+  ]
+}

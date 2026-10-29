@@ -1,0 +1,114 @@
+{
+  "snapshot_id": "phase2a-spatial-20260929-ffb2269b1b9c-v1",
+  "source_id": "cef5a3d7-4b93-57a2-8474-afb981569812",
+  "dataset_version_id": "e6aa5be0-0cf4-5e33-8581-696af9a2045f",
+  "version_label": "geofabrik-java-20260929-jabodetabek-ffb2269b1b9c",
+  "retrieved_at": "2026-09-30T09:29:03Z",
+  "source": {
+    "provider": "Geofabrik GmbH / OpenStreetMap contributors",
+    "url": "https://download.geofabrik.de/asia/indonesia/java-260929.osm.pbf",
+    "publication_page": "https://download.geofabrik.de/asia/indonesia.html",
+    "license": "Open Data Commons Open Database License (ODbL) 1.0",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "attribution": "© OpenStreetMap contributors",
+    "source_replication_timestamp": "2026-09-29T20:22:51Z"
+  },
+  "source_archive": {
+    "path": "data/raw/osm/2026-09-30/source/java-260929.osm.pbf",
+    "bytes": 897514254,
+    "sha256": "0d9cc07419b1d8d05ff6126577d48975af422f92ee94a8e16b69d340c3040bc1"
+  },
+  "raw": {
+    "path": "data/raw/osm/2026-09-30/phase2a/jabodetabek-spatial-strict.osm.pbf",
+    "bytes": 45656523,
+    "sha256": "ffb2269b1b9ceb14ad61cb033e44ad9a0ac798390ee3c8b64d0b615811e6f14f"
+  },
+  "study_envelope": {
+    "west": 106.205898,
+    "south": -6.649546,
+    "east": 107.217352,
+    "north": -5.994144,
+    "rationale": "Union of the Phase-1 TransJakarta shape extent and verified target-rail terminal coordinates, expanded by a 5 km geodesic engineering buffer."
+  },
+  "processing": {
+    "pipeline_version": "PHASE_2A_SPATIAL_V1",
+    "tool": "osmium-tool 1.15.0 / libosmium 2.18.0 in debian:bookworm-slim image digest sha256:3783cc01769c7b2b1b83a5c5ad96c815348e28ed7da68e2e3687004faa906251",
+    "method": "Complete-way bbox extract, relevant OSM tag filter, strict bbox extract, OPL transform, deterministic passability and degree-2 topology contraction.",
+    "opl_path": "data/processed/osm/2026-09-30/jabodetabek-spatial-strict.opl",
+    "opl_bytes": 419280186,
+    "opl_sha256": "946ec648b035a4681dfa4aa185976fe7aee8c07de936baed5ee68624e9bfc481"
+  },
+  "transit_snapshot_dependency": {
+    "snapshot_id": "phase1-transit-20260929-63b4fb14d9af-v2",
+    "dataset_version_id": "bf7e3650-6af7-5bee-b25a-26f763f7fe4c",
+    "manifest": "data/manifests/PHASE-1-CANONICAL-TRANSIT-SNAPSHOT.json"
+  },
+  "configuration": {
+    "verified_entrance_max_m": 250,
+    "nearby_pedestrian_max_m": 150,
+    "station_centroid_fallback_max_m": 300,
+    "interchange_geodesic_ceiling_m": 1000,
+    "interchange_path_ceiling_m": 3000
+  },
+  "network_quality": {
+    "source_nodes_processed": 3760669,
+    "source_ways_processed": 715038,
+    "ways_rejected_by_walkability": 106923,
+    "missing_boundary_node_references": 307,
+    "network_nodes": 947974,
+    "walking_edges": 2315442,
+    "connected_components": 6740,
+    "largest_component_nodes": 918038,
+    "isolated_nodes": 96,
+    "dangling_nodes": 237888,
+    "duplicate_edges": 0,
+    "zero_length_edges": 0,
+    "self_loops": 0,
+    "invalid_geometry": 0,
+    "invalid_srid": 0
+  },
+  "rail_topology": {
+    "KRL": { "stations": 86, "edges": 25, "capability": "TOPOLOGY_ONLY" },
+    "MRT_JAKARTA": {
+      "stations": 13,
+      "edges": 23,
+      "capability": "TOPOLOGY_ONLY"
+    },
+    "LRT_JAKARTA": {
+      "stations": 11,
+      "edges": 101,
+      "capability": "TOPOLOGY_ONLY",
+      "current_terminal": "Manggarai"
+    },
+    "LRT_JABODEBEK": {
+      "stations": 18,
+      "edges": 82,
+      "capability": "TOPOLOGY_ONLY"
+    }
+  },
+  "official_corroboration": {
+    "KRL": "https://www.commuterline.id/",
+    "MRT_JAKARTA": "https://www.jakartamrt.co.id/id/jadwal-keberangkatan-mrt",
+    "LRT_JAKARTA": "https://mail.lrtjakarta.co.id/lrt_jakarta_resmi_terhubung_hingga_manggarai_siap_dukung_mobilitas_dan_konektivitas_masyarakat_jakarta_pers484.html",
+    "LRT_JABODEBEK": "https://lrtjabodebek.kai.id/informasi-peta-rute"
+  },
+  "derived_quality": {
+    "transit_entities_considered": 8219,
+    "resolved_endpoints": 8188,
+    "fallback_endpoints": 23,
+    "unresolved_endpoints": 8,
+    "endpoint_distance_min_m": 0.07,
+    "endpoint_distance_max_m": 295.13,
+    "endpoint_distance_mean_m": 32.45,
+    "entity_references": 8699,
+    "route_references": 480,
+    "entity_aliases": 8219,
+    "ambiguous_alias_keys": 50,
+    "interchange_candidates": 257,
+    "connected_candidates": 209,
+    "disconnected_candidates": 48,
+    "unresolved_candidates": 0
+  },
+  "quality_status": "PASS_WITH_EXPLICIT_BOUNDARY_ANOMALIES",
+  "raw_storage_policy": "Raw PBF and processed OPL are immutable local artifacts ignored by Git; this tracked manifest preserves exact identity and processing provenance."
+}

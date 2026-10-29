@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "phase4b-a-router-input-20261002-v2",
+  "generatedAt": "2026-10-02T22:56:56+07:00",
+  "timezone": "Asia/Jakarta",
+  "transjakartaArchive": {
+    "path": "data/raw/transjakarta/2026-09-29/63b4fb14d9afa7fd21737fee57991366b3f61746af12479725cc17d0cf64fb22/transjakarta-gtfs.zip",
+    "bytes": 2497332,
+    "sha256": "63b4fb14d9afa7fd21737fee57991366b3f61746af12479725cc17d0cf64fb22",
+    "sourceId": "transjakarta-gtfs-static"
+  },
+  "controlledRailSnapshot": {
+    "path": "data/processed/routing/phase4ar/controlled-routing-snapshot.json",
+    "sha256": "e6d2e4a7e48463ea1c7a38b55c589617aa7f1523f962b2487c377bec56436e3c"
+  },
+  "railTopologyOpl": {
+    "path": "data/processed/osm/2026-09-30/rail-topology.opl",
+    "sourceSnapshotId": "phase2a-spatial-20260929-ffb2269b1b9c-v1"
+  },
+  "osm": {
+    "path": "data/raw/osm/2026-09-30/phase2a/jabodetabek-spatial-strict.osm.pbf",
+    "bytes": 45656523,
+    "sha256": "ffb2269b1b9ceb14ad61cb033e44ad9a0ac798390ee3c8b64d0b615811e6f14f",
+    "sourceSnapshotId": "phase2a-spatial-20260929-ffb2269b1b9c-v1",
+    "license": "ODbL-1.0"
+  },
+  "coordinateOverrides": {
+    "KRL": {
+      "KAT": {
+        "latitude": -6.2009538,
+        "longitude": 106.8167704,
+        "sourceReference": "phase2a-osm:node/4849205568",
+        "reason": "GAPEKA 2025 serves Karet; the exact Phase-2 OSM snapshot retains its location as a station later marked disused on 2026-09-01."
+      }
+    }
+  },
+  "serviceDates": [
+    {
+      "feedKey": "tj",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Official GTFS calendar SH is active on this Friday and ends 2027-12-31."
+    },
+    {
+      "feedKey": "mikro",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Mikrotrans routes are selected from the same official TransJakarta GTFS and calendar."
+    },
+    {
+      "feedKey": "krl",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Friday after the latest official KAI Commuter Jabodetabek timetable available to the project became effective on 2025-12-13; the official schedule page exposed no later full Jabodetabek timetable at retrieval."
+    },
+    {
+      "feedKey": "mrt",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Friday within the retrieved official 2026 normal operating pattern."
+    },
+    {
+      "feedKey": "lrtj",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "After 2026-09-16 extension opening and within the official limited-operation facts published 2026-09-25."
+    },
+    {
+      "feedKey": "lrtjb",
+      "timezone": "Asia/Jakarta",
+      "representativeDate": "2026-10-02",
+      "applicability": "Friday matching the controlled official timetable retrieved 2026-10-01."
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "as_of": "2026-09-29T12:00:00+07:00",
+  "operators": [
+    {
+      "operator": "TransJakarta",
+      "source_verified": true,
+      "source_class": "A_VERIFIED_OPEN_MACHINE_DATA",
+      "topology": "FULL_SCHEDULED",
+      "schedule": "FULL_SCHEDULED",
+      "geometry": "SOURCE_SHAPES",
+      "service_calendar": "CALENDAR_AND_FREQUENCIES",
+      "license_status": "VERIFIED_CC_BY_4_0",
+      "redistribution_status": "PERMITTED_WITH_ATTRIBUTION",
+      "canonical_ingestion": "COMPLETED",
+      "quality_status": "WARNING_SOURCE_LIMITATIONS_ACCEPTED",
+      "limitation": "No feed_info or calendar_dates; source timepoint and shape-order warnings remain explicit."
+    },
+    {
+      "operator": "Mikrotrans",
+      "source_verified": true,
+      "source_class": "A_VERIFIED_OPEN_MACHINE_DATA",
+      "topology": "FULL_SCHEDULED",
+      "schedule": "FULL_SCHEDULED",
+      "geometry": "SOURCE_SHAPES",
+      "service_calendar": "CALENDAR_AND_FREQUENCIES",
+      "license_status": "VERIFIED_CC_BY_4_0",
+      "redistribution_status": "PERMITTED_WITH_ATTRIBUTION",
+      "canonical_ingestion": "COVERED_BY_TRANSJAKARTA",
+      "quality_status": "SOURCE_CATEGORY_EVIDENCED",
+      "limitation": "98 routes are evidenced by route_desc=Mikrotrans; no duplicate dataset is created."
+    },
+    {
+      "operator": "KRL Commuter Line Jabodetabek",
+      "source_verified": true,
+      "source_class": "C_OFFICIAL_REUSE_OR_AUTOMATION_UNCLEAR",
+      "topology": "OFFICIAL_DOCUMENT",
+      "schedule": "SCHEDULED_NO_OPEN_REDISTRIBUTION",
+      "geometry": "NOT_AVAILABLE",
+      "service_calendar": "OFFICIAL_TIMETABLE_ONLY",
+      "license_status": "UNKNOWN",
+      "redistribution_status": "UNKNOWN",
+      "canonical_ingestion": "NOT_INGESTED",
+      "quality_status": "SOURCE_GATE_BLOCKED",
+      "limitation": "Official PDF access returned HTTP 403 and no reusable machine-data license was established."
+    },
+    {
+      "operator": "MRT Jakarta",
+      "source_verified": true,
+      "source_class": "C_OFFICIAL_REUSE_OR_AUTOMATION_UNCLEAR",
+      "topology": "OFFICIAL_WEB_PAGE",
+      "schedule": "SCHEDULED_NO_OPEN_REDISTRIBUTION",
+      "geometry": "NOT_AVAILABLE",
+      "service_calendar": "WEB_SCHEDULE_ONLY",
+      "license_status": "UNKNOWN",
+      "redistribution_status": "UNKNOWN",
+      "canonical_ingestion": "NOT_INGESTED",
+      "quality_status": "SOURCE_GATE_BLOCKED",
+      "limitation": "Official HTML is accessible, but bulk reuse, automation, and redistribution rights are not established."
+    },
+    {
+      "operator": "LRT Jakarta",
+      "source_verified": true,
+      "source_class": "C_OFFICIAL_REUSE_OR_AUTOMATION_UNCLEAR",
+      "topology": "TOPOLOGY_ONLY",
+      "schedule": "NOT_VERIFIED",
+      "geometry": "NOT_AVAILABLE",
+      "service_calendar": "NOT_AVAILABLE",
+      "license_status": "UNKNOWN",
+      "redistribution_status": "UNKNOWN",
+      "canonical_ingestion": "NOT_INGESTED",
+      "quality_status": "TOPOLOGY_ONLY_SOURCE_GATE_BLOCKED",
+      "limitation": "The 2026-09-16 official publication proves 11 stations to Manggarai; the old six-station topology and dead timetable URL are not reused."
+    },
+    {
+      "operator": "LRT Jabodebek",
+      "source_verified": true,
+      "source_class": "C_OFFICIAL_REUSE_OR_AUTOMATION_UNCLEAR",
+      "topology": "OFFICIAL_WEB_PAGE",
+      "schedule": "SCHEDULED_NO_OPEN_REDISTRIBUTION",
+      "geometry": "NOT_AVAILABLE",
+      "service_calendar": "WEB_SCHEDULE_ONLY",
+      "license_status": "UNKNOWN",
+      "redistribution_status": "UNKNOWN",
+      "canonical_ingestion": "NOT_INGESTED",
+      "quality_status": "SOURCE_GATE_BLOCKED",
+      "limitation": "Official schedule and 18-station topology are public HTML; reusable bulk-data rights are not established."
+    }
+  ]
+}

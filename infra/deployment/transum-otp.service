@@ -1,0 +1,45 @@
+# EXAMPLE ONLY — not enabled/started; Linux OTP runtime NOT VERIFIED.
+[Unit]
+Description=TRANSUM-IN private OTP 2.10.0 (existing graph only)
+After=network.target
+StartLimitIntervalSec=300
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=transum-otp
+Group=transum-otp
+WorkingDirectory=/srv/transum-in/otp
+ExecStartPre=/srv/transum-in/current/infra/deployment/otp-prestart.sh
+# OTP 2.10.0 binds via CLI, NOT router-config server.bindAddress.
+ExecStart=/opt/transum-in/java25/bin/java -Xmx5G -jar /opt/transum-in/otp/otp-shaded-2.10.0.jar --load --serve --bindAddress 127.0.0.1 --port 8080 --abortOnUnknownConfig /srv/transum-in/otp
+Restart=on-failure
+RestartSec=15s
+TimeoutStopSec=60s
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+# Unmeasured examples: heap plus native headroom; approve host budget first.
+CPUQuota=200%
+MemoryHigh=6G
+MemoryMax=7G
+TasksMax=256
+LimitNOFILE=4096
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=transum-otp
+LogRateLimitIntervalSec=30s
+LogRateLimitBurst=200
+
+[Install]
+WantedBy=multi-user.target

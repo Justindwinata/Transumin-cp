@@ -1,0 +1,81 @@
+{
+  "validator": "MobilityData GTFS Validator",
+  "containerImage": "ghcr.io/mobilitydata/gtfs-validator:8.0.1",
+  "containerDigest": "sha256:26624464be966808662a78c85661b63a313ea936f3a3ee1dbb92c968415275ca",
+  "reportedValidatorVersion": "8.0.1-SNAPSHOT",
+  "validatedAt": "2026-09-29T03:35:02Z",
+  "snapshotSha256": "63b4fb14d9afa7fd21737fee57991366b3f61746af12479725cc17d0cf64fb22",
+  "result": "PASS_WITH_WARNINGS",
+  "errorNotices": 0,
+  "warningNotices": 4062,
+  "informationNotices": 7,
+  "noticeCategories": [
+    {
+      "code": "expired_calendar",
+      "severity": "WARNING",
+      "count": 2,
+      "affectedEntities": ["HJ", "X"],
+      "classification": "SOURCE_LIMITATION",
+      "impact": "Neither calendar is referenced by a trip, so the frozen 2026 service view is unaffected.",
+      "action": "ACCEPTED"
+    },
+    {
+      "code": "missing_recommended_file",
+      "severity": "WARNING",
+      "count": 1,
+      "affectedEntities": ["feed_info.txt"],
+      "classification": "SOURCE_LIMITATION",
+      "impact": "Publisher feed version metadata is unavailable; retrieval time and SHA-256 provide immutable identity.",
+      "action": "ACCEPTED"
+    },
+    {
+      "code": "missing_timepoint_value",
+      "severity": "WARNING",
+      "count": 4038,
+      "affectedEntities": ["stop_times.txt"],
+      "classification": "SOURCE_LIMITATION",
+      "impact": "Exact/interpolated timepoint semantics are unspecified; times remain source-preserved and are not guessed.",
+      "action": "REQUIRES_FUTURE_ACTION"
+    },
+    {
+      "code": "mixed_case_recommended_field",
+      "severity": "WARNING",
+      "count": 18,
+      "affectedEntities": ["stops.txt"],
+      "classification": "ACCEPTED",
+      "impact": "Recommended capitalization only; identifiers, names, and matching semantics are unchanged.",
+      "action": "ACCEPTED"
+    },
+    {
+      "code": "stops_match_shape_out_of_order",
+      "severity": "WARNING",
+      "count": 3,
+      "affectedEntities": ["JAK.27-R01", "JAK.30-R01", "JAK.27-L01"],
+      "classification": "SOURCE_LIMITATION",
+      "impact": "Three trip templates have stops that do not follow source shape order; canonical traversal fidelity is retained without reordering.",
+      "action": "REQUIRES_FUTURE_ACTION"
+    },
+    {
+      "code": "unknown_column",
+      "severity": "INFO",
+      "count": 5,
+      "affectedEntities": ["ticketing extension columns"],
+      "classification": "ACCEPTED",
+      "impact": "Non-standard ticketing fields are outside the Phase 1 canonical scope and remain in the immutable archive.",
+      "action": "ACCEPTED"
+    },
+    {
+      "code": "unknown_file",
+      "severity": "INFO",
+      "count": 2,
+      "affectedEntities": [
+        "ticketing_deep_links.txt",
+        "ticketing_identifiers.txt"
+      ],
+      "classification": "ACCEPTED",
+      "impact": "Non-standard files are retained but not ingested.",
+      "action": "ACCEPTED"
+    }
+  ],
+  "rawReportPolicy": "The generated HTML/JSON reports remain in ignored data/processed storage; this compact summary is tracked."
+}

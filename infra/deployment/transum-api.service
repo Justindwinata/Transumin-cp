@@ -1,0 +1,47 @@
+# EXAMPLE ONLY — Linux runtime NOT VERIFIED. Replace paths/user after approval.
+[Unit]
+Description=TRANSUM-IN loopback API
+After=network.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=transum-api
+Group=transum-api
+WorkingDirectory=/srv/transum-in/current/apps/api
+EnvironmentFile=/etc/transum-in/api.env
+Environment=NODE_ENV=production APP_ENV=production API_HOST=127.0.0.1 API_PORT=3001 CONTROLLED_REVIEW_ENABLED=false
+ExecStart=/usr/bin/node dist/main.js
+Restart=on-failure
+RestartSec=10s
+TimeoutStopSec=30s
+KillSignal=SIGTERM
+KillMode=control-group
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+# Conservative example ceilings, NOT measured capacity; review host budget.
+CPUQuota=100%
+MemoryHigh=768M
+MemoryMax=1G
+TasksMax=128
+LimitNOFILE=4096
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=transum-api
+LogRateLimitIntervalSec=30s
+LogRateLimitBurst=200
+
+[Install]
+WantedBy=multi-user.target

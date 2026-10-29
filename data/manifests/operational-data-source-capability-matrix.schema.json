@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://transum-in.local/schemas/operational-data-source-capability-matrix.schema.json",
+  "title": "Operational data source capability matrix",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "audited_at",
+    "policy_version",
+    "sources",
+    "mode_coverage"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "audited_at": { "type": "string", "format": "date-time" },
+    "policy_version": { "const": "PHASE_1D_V1" },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "mode_coverage": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": { "$ref": "#/$defs/modeCoverage" }
+    }
+  },
+  "$defs": {
+    "truth": { "enum": ["TRUE", "FALSE", "UNKNOWN"] },
+    "classification": {
+      "enum": [
+        "VERIFIED_PUBLIC_API",
+        "VERIFIED_PUBLIC_FEED",
+        "VERIFIED_PUBLIC_INFORMATION",
+        "PARTNERSHIP_REQUIRED",
+        "AUTOMATION_RESTRICTED",
+        "NOT_AVAILABLE",
+        "UNKNOWN"
+      ]
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "static_schedule",
+        "live_position",
+        "eta",
+        "service_alert",
+        "station_status",
+        "stop_status",
+        "route_status",
+        "disruption_event"
+      ],
+      "properties": {
+        "static_schedule": { "$ref": "#/$defs/truth" },
+        "live_position": { "$ref": "#/$defs/truth" },
+        "eta": { "$ref": "#/$defs/truth" },
+        "service_alert": { "$ref": "#/$defs/truth" },
+        "station_status": { "$ref": "#/$defs/truth" },
+        "stop_status": { "$ref": "#/$defs/truth" },
+        "route_status": { "$ref": "#/$defs/truth" },
+        "disruption_event": { "$ref": "#/$defs/truth" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_key",
+        "publisher",
+        "official_url",
+        "service_type",
+        "classification",
+        "documented_api",
+        "public_access",
+        "authentication_requirement",
+        "automation_status",
+        "reuse_redistribution_status",
+        "freshness",
+        "capabilities",
+        "integration_route",
+        "implementation_status",
+        "evidence"
+      ],
+      "properties": {
+        "source_id": { "type": "string", "format": "uuid" },
+        "source_key": { "type": "string", "minLength": 1 },
+        "publisher": { "type": "string", "minLength": 1 },
+        "official_url": { "type": "string", "format": "uri" },
+        "service_type": { "type": "string", "minLength": 1 },
+        "classification": { "$ref": "#/$defs/classification" },
+        "documented_api": { "$ref": "#/$defs/truth" },
+        "public_access": { "$ref": "#/$defs/truth" },
+        "authentication_requirement": {
+          "enum": ["NONE", "REQUIRED", "UNKNOWN"]
+        },
+        "automation_status": {
+          "enum": ["PERMITTED", "PARTNERSHIP_REQUIRED", "RESTRICTED", "UNKNOWN"]
+        },
+        "reuse_redistribution_status": {
+          "enum": ["PERMITTED", "PROHIBITED", "UNKNOWN"]
+        },
+        "freshness": { "type": "string", "minLength": 1 },
+        "capabilities": { "$ref": "#/$defs/capabilities" },
+        "integration_route": { "type": "string", "minLength": 1 },
+        "implementation_status": {
+          "enum": ["ADAPTER_IMPLEMENTED", "REGISTRY_ONLY", "NOT_INTEGRATED"]
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "modeCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "static_routing_representation",
+        "topology",
+        "schedule",
+        "live_vehicle_eta",
+        "service_alerts",
+        "station_status",
+        "stop_status",
+        "route_service_status",
+        "official_source",
+        "source_classification",
+        "integration_route",
+        "freshness",
+        "licensing_access_limitation",
+        "current_implementation_status"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "TRANSJAKARTA",
+            "MIKROTRANS",
+            "KRL",
+            "MRT_JAKARTA",
+            "LRT_JAKARTA",
+            "LRT_JABODEBEK",
+            "WALKING"
+          ]
+        },
+        "static_routing_representation": { "type": "string", "minLength": 1 },
+        "topology": { "type": "string", "minLength": 1 },
+        "schedule": { "type": "string", "minLength": 1 },
+        "live_vehicle_eta": { "$ref": "#/$defs/truth" },
+        "service_alerts": { "$ref": "#/$defs/truth" },
+        "station_status": { "$ref": "#/$defs/truth" },
+        "stop_status": { "$ref": "#/$defs/truth" },
+        "route_service_status": { "$ref": "#/$defs/truth" },
+        "official_source": { "type": "string", "minLength": 1 },
+        "source_classification": { "$ref": "#/$defs/classification" },
+        "integration_route": { "type": "string", "minLength": 1 },
+        "freshness": { "type": "string", "minLength": 1 },
+        "licensing_access_limitation": { "type": "string", "minLength": 1 },
+        "current_implementation_status": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

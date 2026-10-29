@@ -1,0 +1,40 @@
+{
+  "fixture_status": "RECORDED_MINIMIZED_NOT_LIVE",
+  "recorded_from": "https://data.petabencana.id/floods?admin=ID-JK&minimum_state=1",
+  "recorded_at": "2026-10-01T02:49:28.725Z",
+  "note": "Properties are recorded; the polygon ring is deliberately minimized for deterministic parser regression and is not a research geometry snapshot.",
+  "response": {
+    "statusCode": 200,
+    "result": {
+      "type": "Topology",
+      "objects": {
+        "output": {
+          "type": "GeometryCollection",
+          "geometries": [
+            {
+              "type": "Polygon",
+              "properties": {
+                "area_id": "2945",
+                "area_name": "RT 013",
+                "parent_name": "LUBANG BUAYA",
+                "city_name": "CIPAYUNG",
+                "state": 2,
+                "last_updated": "2024-09-27T11:02:28.940Z"
+              },
+              "arcs": [[0]]
+            }
+          ]
+        }
+      },
+      "arcs": [
+        [
+          [106.90539447, -6.290876171],
+          [106.905346018, -6.290847866],
+          [106.905198874, -6.290758252],
+          [106.905033628, -6.29068051],
+          [106.90539447, -6.290876171]
+        ]
+      ]
+    }
+  }
+}

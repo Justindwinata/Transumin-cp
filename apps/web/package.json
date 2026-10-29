@@ -1,0 +1,43 @@
+{
+  "name": "@transum-in/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "test": "node --experimental-strip-types --test src/lib/passenger.test.mjs src/lib/passenger-api.test.mjs src/lib/passenger-proxy.test.mjs src/lib/map-geometry.test.mjs src/lib/navigation.test.mjs src/lib/walk-navigation-cp2.test.mjs src/lib/g1-recovery-guards.test.mjs src/lib/ops.test.mjs src/lib/ops-proxy.test.mjs src/lib/ops-dashboard.test.mjs scripts/g1-session-security.test.mjs scripts/cp2-runtime-guard.test.mjs scripts/passenger-modes-place-readiness.test.mjs src/lib/external-handoff.test.mjs",
+    "test:e2e": "pnpm --filter @transum-in/api exec tsx src/journey/cp2-isolated-browser.cli.ts --suite=SMOKE",
+    "test:browser:e2e": "node scripts/passenger-browser-acceptance.mjs",
+    "test:browser:map": "node scripts/journey-map-browser-acceptance.mjs",
+    "test:browser:r4": "node scripts/passenger-r4-f01-f02-acceptance.mjs",
+    "test:browser:r4:nav": "node scripts/passenger-r4-f04-acceptance.mjs",
+    "test:browser:cp2:walk": "node scripts/passenger-cp2-walk-navigation-acceptance.mjs",
+    "test:browser:r4:handoff": "node scripts/passenger-r4-f06-handoff-acceptance.mjs",
+    "test:browser:m5:reports": "pnpm --filter @transum-in/api exec tsx src/journey/cp2-isolated-browser.cli.ts --suite=M5",
+    "test:browser:m7:integrated": "pnpm --filter @transum-in/api exec tsx src/journey/cp2-isolated-browser.cli.ts --suite=M7",
+    "test:browser:v20:mobile": "pnpm --filter @transum-in/api exec tsx src/journey/cp2-isolated-browser.cli.ts --suite=MOBILE",
+    "test:browser:endpoint:negative": "pnpm --filter @transum-in/api exec tsx src/journey/cp2-isolated-browser.cli.ts --suite=NEG",
+    "test:browser:restart:production": "pnpm --filter @transum-in/api exec tsx src/journey/cp2-isolated-browser.cli.ts --restart-production",
+    "test:demo": "pnpm --filter @transum-in/api test:demo",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@transum-in/shared-types": "workspace:*",
+    "maplibre-gl": "6.4.1",
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "playwright-core": "^1.63.0",
+    "postcss": "8.5.28",
+    "tailwindcss": "4.3.3"
+  }
+}

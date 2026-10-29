@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://transum-in.local/schemas/dataset-manifest.schema.json",
+  "title": "TRANSUM-IN NEXUS immutable dataset manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_key",
+    "version_label",
+    "retrieved_at",
+    "effective_from",
+    "effective_to",
+    "checksum_sha256",
+    "raw_path_ref",
+    "license_record",
+    "validation_status",
+    "validation_report_ref"
+  ],
+  "properties": {
+    "dataset_source_id": { "type": "string", "format": "uuid" },
+    "dataset_version_id": { "type": "string", "format": "uuid" },
+    "source_key": { "type": "string", "minLength": 1 },
+    "version_label": { "type": "string", "minLength": 1 },
+    "retrieved_at": { "type": "string", "format": "date-time" },
+    "effective_from": { "type": ["string", "null"], "format": "date-time" },
+    "effective_to": { "type": ["string", "null"], "format": "date-time" },
+    "checksum_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "raw_path_ref": { "type": "string", "minLength": 1 },
+    "license_record": { "type": "string", "minLength": 1 },
+    "validation_status": {
+      "type": "string",
+      "enum": ["PENDING", "VALID", "WARNING", "INVALID"]
+    },
+    "validation_report_ref": { "type": ["string", "null"] },
+    "publication_page": { "type": "string", "format": "uri" },
+    "requested_download_url": { "type": "string", "format": "uri" },
+    "resolved_download_url": { "type": "string", "format": "uri" },
+    "http_status": { "type": "integer", "minimum": 100, "maximum": 599 },
+    "content_type": { "type": "string", "minLength": 1 },
+    "archive_filename": { "type": "string", "minLength": 1 },
+    "archive_bytes": { "type": "integer", "minimum": 1 },
+    "validator": { "type": "string", "minLength": 1 },
+    "external_validator_status": {
+      "type": "string",
+      "enum": ["PASS", "NOT_VERIFIED"]
+    },
+    "external_validator_note": { "type": "string", "minLength": 1 },
+    "external_validation_summary_ref": { "type": ["string", "null"] },
+    "transformations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "version", "configuration_ref"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "configuration_ref": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

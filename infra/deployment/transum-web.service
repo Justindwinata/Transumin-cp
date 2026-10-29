@@ -1,0 +1,50 @@
+# EXAMPLE ONLY — Linux runtime NOT VERIFIED. Replace paths/user after approval.
+[Unit]
+Description=TRANSUM-IN loopback passenger web
+After=network.target transum-api.service
+Wants=transum-api.service
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=transum-web
+Group=transum-web
+WorkingDirectory=/srv/transum-in/current/apps/web
+EnvironmentFile=/etc/transum-in/web.env
+Environment=NODE_ENV=production APP_ENV=production CONTROLLED_REVIEW_ENABLED=false
+ExecStart=/usr/bin/node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3000
+Restart=on-failure
+RestartSec=10s
+TimeoutStopSec=30s
+KillSignal=SIGTERM
+KillMode=control-group
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+# Next runtime cache only; checkout and artifacts otherwise read-only.
+ReadWritePaths=/srv/transum-in/current/apps/web/.next/cache
+# Conservative example ceilings, NOT measured capacity; review host budget.
+CPUQuota=100%
+MemoryHigh=768M
+MemoryMax=1G
+TasksMax=128
+LimitNOFILE=4096
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=transum-web
+LogRateLimitIntervalSec=30s
+LogRateLimitBurst=200
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,43 @@
+{
+  "snapshot_id": "phase1-transit-20260929-63b4fb14d9af-v2",
+  "created_at": "2026-09-29T12:00:00+07:00",
+  "code_commit": "SELF",
+  "code_commit_resolution": "The immutable code revision is the Git commit containing this manifest; SELF avoids an impossible self-referential commit hash.",
+  "pipeline_version": "PHASE_1C_V2",
+  "representative_service_date": "2026-09-29",
+  "coverage_manifest": "data/manifests/PHASE-1-OPERATOR-COVERAGE.json",
+  "sources": [
+    {
+      "source_key": "transjakarta-official-gtfs-static",
+      "dataset_version_id": "bf7e3650-6af7-5bee-b25a-26f763f7fe4c",
+      "checksum_sha256": "63b4fb14d9afa7fd21737fee57991366b3f61746af12479725cc17d0cf64fb22",
+      "manifest": "data/manifests/transjakarta-gtfs-63b4fb14d9af.json",
+      "ingestion_run_id": "8ed17bac-bb9b-453f-959f-0629989f11af",
+      "coverage": "FULL_SCHEDULED including source-evidenced Mikrotrans",
+      "license_status": "VERIFIED_CC_BY_4_0",
+      "redistribution_status": "PERMITTED_WITH_ATTRIBUTION"
+    }
+  ],
+  "canonical_counts": {
+    "operators": 1,
+    "routes": 240,
+    "stations": 272,
+    "stops": 7819,
+    "service_calendars": 7,
+    "trips": 700,
+    "trip_frequencies": 753,
+    "stop_times": 26427,
+    "shapes": 700,
+    "transfers": 14,
+    "logical_transit_segments": 17727,
+    "trip_segment_traversals": 25727,
+    "mobility_entities": 26072
+  },
+  "quality_status": "PASS_WITH_ACCEPTED_SOURCE_WARNINGS",
+  "limitations": [
+    "Only TransJakarta passes the Phase 1 canonical-ingestion source gate.",
+    "KRL, MRT Jakarta, LRT Jakarta, and LRT Jabodebek remain audited but not ingested because reusable data rights or stable bulk access are unverified.",
+    "No cross-operator station or interchange inference is included."
+  ],
+  "reproducibility_key": "PHASE_1C_V2:2026-09-29:63b4fb14d9afa7fd21737fee57991366b3f61746af12479725cc17d0cf64fb22"
+}

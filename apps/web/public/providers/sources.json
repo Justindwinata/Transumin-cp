@@ -1,0 +1,23 @@
+[
+  {
+    "file": "gojek.svg",
+    "source": "https://lelogama.go-jek.com/prime/upload/gojek-horizontal-logo-white.svg",
+    "sha256": "0999a2bbdf48c6734de9788fe382a3db6eac73d39aae17d6d7ff3c9a2370273f",
+    "purpose": "Identification link in local UAT; no affiliation or booking integration implied",
+    "public_redistribution_license": "NOT_VERIFIED"
+  },
+  {
+    "file": "grab.png",
+    "source": "https://www.grab.com/id/wp-content/themes/grabsg/public/img/grab_logo_158.png",
+    "sha256": "4bf8ee58a4b5f69b7f9c9b65aef5e7cc8593ebd489d9b31b2153557bf14cd394",
+    "purpose": "Identification link in local UAT; no affiliation or booking integration implied",
+    "public_redistribution_license": "NOT_VERIFIED"
+  },
+  {
+    "file": "bluebird.png",
+    "source": "https://www.bluebirdgroup.com/asset/icons/ic_logo-mybluebird-blue.png",
+    "sha256": "d9d889e4956a689ee67267b48269975a82a0268424d090d430b528fcefd901cc",
+    "purpose": "Identification link in local UAT; no affiliation or booking integration implied",
+    "public_redistribution_license": "NOT_VERIFIED"
+  }
+]

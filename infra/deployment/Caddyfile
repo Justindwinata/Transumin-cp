@@ -1,0 +1,24 @@
+# EXAMPLE ONLY — Linux deployment NOT VERIFIED. Do not start without approval.
+# Required: STAGING_DOMAIN = approved DNS hostname (no scheme/path/port).
+{
+	admin localhost:2019
+}
+
+# Fail closed to reserved hostname if operator bypasses validate.sh.
+https://{$STAGING_DOMAIN:missing-staging-domain.invalid} {
+	request_body {
+		max_size 1MB
+	}
+	@passenger path /api/passenger/*
+	header @passenger Cache-Control "no-store"
+	# Web owns same-origin passenger proxy; never expose API/OTP directly.
+	# Default Host forwarding retained; Caddy supplies trusted X-Forwarded-*.
+	reverse_proxy 127.0.0.1:3000 {
+		# Immediate flushing; no compression/cache plugin or finite stream timeout.
+		flush_interval -1
+		transport http {
+			dial_timeout 5s
+			response_header_timeout 30s
+		}
+	}
+}
