@@ -13,7 +13,7 @@ Docker sebelum: 61 container berhenti, 46 volume 22,13 GB, lima image 2,276 GB d
 
 Sebanyak 22 direktori dependency/build terabaikan Git pada salinan Developer dan worktree lama dibersihkan (perkiraan 4,08 GB). Bukti duplikat previous-location sekitar 455 MB dipindahkan ke arsip privat sebelum dihapus dari folder kerja. Source lama, lockfile, data dan pekerjaan tidak dihapus. Dependency instalasi verifikasi pada ekspor juga dibersihkan setelah tes.
 
-Ruang kosong host: sekitar 5,2 GiB sebelum dan sekitar 10 GiB setelah, termasuk sekitar 6 GB backup baru. Angka ruang host dan ukuran logis Docker tidak setara karena sparse disk/APFS. Docker.raw tidak dihapus. Docker sempat berhenti merespons ketika ruang sangat rendah saat percobaan arsip fisik produk; arsip tidak lengkap dibuang, Desktop dipulihkan, lalu backup logis dan restore test lulus. Tidak ada klaim semua percobaan backup berhasil.
+Ruang kosong host: sekitar 5,2 GiB sebelum dan sekitar 12 GiB setelah, termasuk sekitar 6 GB backup baru. Angka ruang host dan ukuran logis Docker tidak setara karena sparse disk/APFS. Docker.raw tidak dihapus. Docker sempat berhenti merespons ketika ruang sangat rendah saat percobaan arsip fisik produk; arsip tidak lengkap dibuang, Desktop dipulihkan, lalu backup logis dan restore test lulus. Tidak ada klaim semua percobaan backup berhasil.
 
 ## Menjalankan kembali
 Ikuti RESTORE-20261029.md. pnpm install diperlukan pada salinan yang dependency-nya dibersihkan. Database produk tetap tersedia pada volume aslinya, dalam keadaan berhenti seperti saat audit awal. Lingkungan UAT memerlukan data/graph dan .env privat. Jadwal aplikasi tetap historis; cleanup tidak mengubah status produksi, GPS, atau ETA.
